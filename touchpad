@@ -1,0 +1,17 @@
+input "1267:12734:MSFT0001:01_04F3:31BE_Touchpad" {
+  events enabled
+  accel_profile flat
+  pointer_accel 0.0
+  natural_scroll enabled
+  scroll_factor 1.0
+  scroll_method two_finger
+  left_handed disabled
+  tap enabled
+  tap_button_map lrm
+  drag enabled
+  drag_lock disabled
+  dwt enabled
+  dwtp disabled
+  middle_emulation enabled
+  click_method button_areas
+}
