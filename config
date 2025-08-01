@@ -19,8 +19,8 @@ set $menu wofi -IiS drun
 
 ### Output configuration
 ## Background
-# output * bg /usr/share/backgrounds/sway/Sway_Wallpaper_Blue_1920x1080.png fill
-output * bg ~/Google Drive/images/back ground/linux/evangelion-rei.png fill
+output * bg /usr/share/backgrounds/sway/Sway_Wallpaper_Blue_1920x1080.png fill
+# output * bg ~/Google Drive/images/back ground/linux/evangelion-rei.png fill
 
 ### Idle configuration
 #
@@ -75,6 +75,8 @@ output * bg ~/Google Drive/images/back ground/linux/evangelion-rei.png fill
 gaps inner 3
 gaps outer 5
 default_border pixel 1
+
+font Pango:FiraMono Nerd Font 12
 
 # Moving around:
     # Move your focus around
