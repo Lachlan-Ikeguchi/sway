@@ -20,7 +20,7 @@ set $menu wofi -IiS drun
 ### Output configuration
 ## Background
 output * bg /usr/share/backgrounds/sway/Sway_Wallpaper_Blue_1920x1080.png fill
-# output * bg ~/Google Drive/images/back ground/linux/evangelion-rei.png fill
+output * bg /home/lachlan/Pictures/background/linux/evangelion-rei.png fill
 
 ### Idle configuration
 #
@@ -69,7 +69,7 @@ output * bg /usr/share/backgrounds/sway/Sway_Wallpaper_Blue_1920x1080.png fill
     bindsym $mod+Shift+c reload
 
     # Exit sway (logs you out of your Wayland session)
-    bindsym $mod+Shift+e exec swaynag -t warning -m 'You pressed the exit shortcut. Do you really want to exit sway? This will end your Wayland session.' -B 'Yes, exit sway' 'swaymsg exit'
+    bindsym $mod+Shift+e exec swaymsg exit
 
 # Aesthetics
 gaps inner 3
