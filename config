@@ -19,6 +19,11 @@ set $wobpipe /tmp/wobpipe
 exec mkfifo $wobpipe
 exec tail -f $wobpipe | wob
 
+exec nm-applet --indicator
+exec nm-connection-editor
+
+exec swaync
+
 input type:keyboard xkb_numlock enabled
 ########################################################################
 
@@ -157,7 +162,8 @@ bar {
     colors {
         statusline #ffffff
         background #0f320fe6
-        inactive_workspace #323232 #323232 #5c5c5c
+        active_workspace #0f640f #ffffff #646464
+        inactive_workspace #323232e6 #323232e6 #5c5c5c
         separator #0f640f
     }
 }
