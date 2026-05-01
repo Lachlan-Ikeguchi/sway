@@ -1,0 +1,14 @@
+# Required programs
+- (window management): sway 
+- (application menu): wofi
+- (terminal): alacritty
+- (network control): nm/NetworkManager
+- (notifications): swaync
+- (volume and brightness visual): wob
+- (status bar): swaybar
+- (font): FiraMono Nerd Font
+- (volume control): wpctl
+- (brightness control): brightnessctl
+- (IPC): swaymsg
+- (screen snip): slurp 
+- (full screenshot): grim 
