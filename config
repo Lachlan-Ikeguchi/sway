@@ -9,7 +9,7 @@ set $up k
 set $right l
 
 set $term alacritty
-set $menu wofi -IiS drun
+set $menu wofi --conf ~/.config/wofi/config -S drun
 ########################################################################
 
 ########################################################################
