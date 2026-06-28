@@ -27,8 +27,12 @@ exec swaync
 input type:keyboard xkb_numlock enabled
 
 exec ~/.config/sway/scripts/lid-switch.sh
-exec ~/.config/sway/scripts/lid-monitor.sh &
-exec swayidle -w timeout 300 'swaylock' timeout 600 'swaymsg dpms off' resume 'swaymsg dpms on' before-sleep '~/.config/sway/scripts/lid-switch.sh' after-sleep '~/.config/sway/scripts/lid-switch.sh'
+# exec ~/.config/sway/scripts/lid-monitor.sh &
+exec swayidle -w timeout 300 'swaylock' timeout 600 'swaymsg dpms off' resume 'swaymsg dpms on' before-sleep '~/.config/sway/scripts/lid-switch.sh close' after-sleep '~/.config/sway/scripts/lid-switch.sh open'
+
+# Sway native lid switch handling (replaces lid-monitor.sh)
+bindswitch lid:off exec ~/.config/sway/scripts/lid-switch.sh close
+bindswitch lid:on exec ~/.config/sway/scripts/lid-switch.sh open
 
 exec dbus-update-activation-environment DISPLAY
 exec ~/.config/sway/scripts/autostart.sh
