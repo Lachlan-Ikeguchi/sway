@@ -17,6 +17,8 @@ set $menu wofi -IiS drun
 # Volume control with wob
 exec ~/.config/sway/scripts/volume-control.sh start
 
+exec gnome-keyring-daemon --start --components=secrets
+
 exec nm-applet --indicator
 exec nm-connection-editor
 
@@ -29,6 +31,8 @@ exec ~/.config/sway/scripts/lid-monitor.sh &
 exec swayidle -w before-sleep '~/.config/sway/scripts/lid-switch.sh' after-sleep '~/.config/sway/scripts/lid-switch.sh'
 
 exec dbus-update-activation-environment DISPLAY
+exec ~/.config/sway/scripts/autostart.sh
+
 ########################################################################
 
 ########################################################################
@@ -42,7 +46,7 @@ client.focused #ffffff #0f640fe6 #ffffff #0f640fe6
 font Pango:FiraMono Nerd Font 12
 
 output * bg /usr/share/backgrounds/sway/Sway_Wallpaper_Blue_1920x1080.png fill
-# output * bg /home/lachlan/Pictures/background/linux/evangelion-rei.png fill
+output * bg /home/lachlan/Pictures/background/linux/evangelion-rei.png fill
 ########################################################################
 
 ########################################################################
