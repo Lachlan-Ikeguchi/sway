@@ -25,6 +25,12 @@ exec nm-connection-editor
 exec swaync
 
 input type:keyboard xkb_numlock enabled
+
+exec ~/.config/sway/scripts/lid-switch.sh
+exec ~/.config/sway/scripts/lid-monitor.sh &
+exec swayidle -w before-sleep '~/.config/sway/scripts/lid-switch.sh' after-sleep '~/.config/sway/scripts/lid-switch.sh'
+
+exec dbus-update-activation-environment DISPLAY
 ########################################################################
 
 ########################################################################
@@ -38,7 +44,7 @@ client.focused #ffffff #0f640fe6 #ffffff #0f640fe6
 font Pango:FiraMono Nerd Font 12
 
 output * bg /usr/share/backgrounds/sway/Sway_Wallpaper_Blue_1920x1080.png fill
-output * bg /home/lachlan/Pictures/background/linux/evangelion-rei.png fill
+# output * bg /home/lachlan/Pictures/background/linux/evangelion-rei.png fill
 ########################################################################
 
 ########################################################################
