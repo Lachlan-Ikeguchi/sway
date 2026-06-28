@@ -14,10 +14,8 @@ set $menu wofi -IiS drun
 
 ########################################################################
 # Setting things up
-set $wobpipe /tmp/wobpipe
-
-exec mkfifo $wobpipe
-exec tail -f $wobpipe | wob
+# Volume control with wob
+exec ~/.config/sway/scripts/volume-control.sh start
 
 exec nm-applet --indicator
 exec nm-connection-editor
@@ -97,9 +95,9 @@ bindsym $super+Shift+minus move scratchpad
 bindsym $super+minus scratchpad show
 
 # Audio
-bindsym XF86AudioMute exec wpctl set-mute @DEFAULT_AUDIO_SINK@ toggle
-bindsym XF86AudioRaiseVolume exec wpctl set-volume @DEFAULT_AUDIO_SINK@ 5%+ && printf "%.0f\n" $(echo "scale=4; $(wpctl get-volume @DEFAULT_AUDIO_SINK@ | awk '{print $2}' | sed 's/\[MUTED\]//g') * 100" | bc -l) > $wobpipe
-bindsym XF86AudioLowerVolume exec wpctl set-volume @DEFAULT_AUDIO_SINK@ 5%- && printf "%.0f\n" $(echo "scale=4; $(wpctl get-volume @DEFAULT_AUDIO_SINK@ | awk '{print $2}' | sed 's/\[MUTED\]//g') * 100" | bc -l) > $wobpipe
+bindsym XF86AudioMute exec ~/.config/sway/scripts/volume-control.sh toggle
+bindsym XF86AudioRaiseVolume exec ~/.config/sway/scripts/volume-control.sh up
+bindsym XF86AudioLowerVolume exec ~/.config/sway/scripts/volume-control.sh down
 
 # Brightness
 bindsym XF86MonBrightnessUp exec brightnessctl s +10%
