@@ -28,7 +28,7 @@ input type:keyboard xkb_numlock enabled
 
 exec ~/.config/sway/scripts/lid-switch.sh
 exec ~/.config/sway/scripts/lid-monitor.sh &
-exec swayidle -w before-sleep '~/.config/sway/scripts/lid-switch.sh' after-sleep '~/.config/sway/scripts/lid-switch.sh'
+exec swayidle -w timeout 300 'swaylock' timeout 600 'swaymsg dpms off' resume 'swaymsg dpms on' before-sleep '~/.config/sway/scripts/lid-switch.sh' after-sleep '~/.config/sway/scripts/lid-switch.sh'
 
 exec dbus-update-activation-environment DISPLAY
 exec ~/.config/sway/scripts/autostart.sh
@@ -110,6 +110,7 @@ bindsym XF86MonBrightnessDown exec brightnessctl s 10%-
 # Sway
 bindsym $super+Shift+c reload
 bindsym $super+Shift+e exec swaymsg exit
+bindsym Control+Alt+Delete exec swaylock
 
 # Moving
 bindsym $super+$left focus left
